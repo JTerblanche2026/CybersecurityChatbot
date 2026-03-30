@@ -8,13 +8,13 @@ namespace CybersecurityChatbot
         [System.Runtime.Versioning.SupportedOSPlatform("windows")]
         static void Main(string[] args)
         {
-            // ── Display ASCII logo ───────────────────────────────────
+            // Display ASCII logo 
             ConsoleUI.PrintLogo();
 
-            // ── Play voice greeting ──────────────────────────────────
+            // Play voice greeting 
             VoiceGreeting.Play();
 
-            // ── Start chatbot ────────────────────────────────────────
+            // Start chatbot 
             ChatEngine chatEngine = new ChatEngine();
             chatEngine.StartChat();
             chatEngine.RunLoop();

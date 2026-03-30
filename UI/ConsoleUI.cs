@@ -40,39 +40,48 @@ namespace CybersecurityChatbot.UI
 
         //ASCII Art Logo 
         public static void PrintLogo()
-        {
-            Console.Clear();
-            PrintDivider();
-            WriteColour(@"
-   ██████╗██╗   ██╗██████╗ ███████╗██████╗      
-  ██╔════╝╚██╗ ██╔╝██╔══██╗██╔════╝██╔══██╗     
-  ██║      ╚████╔╝ ██████╔╝█████╗  ██████╔╝     
-  ██║       ╚██╔╝  ██╔══██╗██╔══╝  ██╔══██╗     
-  ╚██████╗   ██║   ██████╔╝███████╗██║  ██║     
-   ╚═════╝   ╚═╝   ╚═════╝ ╚══════╝╚═╝  ╚═╝    
-                                                 
-   Cybersecurity Awareness Bot            
-   Keeping South Africa Safe Online             
-", ConsoleColor.Cyan);
-            PrintDivider();
-        }
+{
+    Console.Clear();
+    Console.BackgroundColor = ConsoleColor.Black;
+    Console.Clear();
 
+    WriteColour("  ╔════════════════════════════════════════════════════════╗", ConsoleColor.DarkCyan);
+    WriteColour("  ║                                                        ║", ConsoleColor.DarkCyan);
+    WriteColour(@"  ║   ███████╗███████╗ ██████╗██╗   ██╗██████╗  ██████╗    ║", ConsoleColor.Cyan);
+    WriteColour(@"  ║   ██╔════╝██╔════╝██╔════╝██║   ██║██╔══██╗██╔═══██╗   ║", ConsoleColor.Cyan);
+    WriteColour(@"  ║   ███████╗█████╗  ██║     ██║   ██║██████╔╝██║   ██║   ║", ConsoleColor.Cyan);
+    WriteColour(@"  ║   ╚════██║██╔══╝  ██║     ██║   ██║██╔══██╗██║   ██║   ║", ConsoleColor.Cyan);
+    WriteColour(@"  ║   ███████║███████╗╚██████╗╚██████╔╝██║  ██║╚██████╔╝   ║", ConsoleColor.Cyan);
+    WriteColour(@"  ║   ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝    ║", ConsoleColor.Cyan);
+    WriteColour(@"  ║        ████████╗██████╗  ██████╗ ███╗   ██╗            ║", ConsoleColor.DarkCyan);
+    WriteColour(@"  ║           ██╔══╝██╔══██╗██╔═══██╗████╗  ██║            ║", ConsoleColor.DarkCyan);
+    WriteColour(@"  ║           ██║   ██████╔╝██║   ██║██╔██╗ ██║            ║", ConsoleColor.DarkCyan);
+    WriteColour(@"  ║           ██║   ██╔══██╗██║   ██║██║╚██╗██║            ║", ConsoleColor.DarkCyan);
+    WriteColour(@"  ║           ██║   ██║  ██║╚██████╔╝██║ ╚████║            ║", ConsoleColor.DarkCyan);
+    WriteColour(@"  ║           ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝            ║", ConsoleColor.DarkCyan);
+    WriteColour("  ║                                                        ║", ConsoleColor.DarkCyan);
+    WriteColour("  ║          Cybersecurity Awareness Bot                   ║", ConsoleColor.Green);
+    WriteColour("  ║         Keeping South Africa Safe Online               ║", ConsoleColor.DarkGreen);
+    WriteColour("  ║                                                        ║", ConsoleColor.DarkCyan);
+    WriteColour("  ╚════════════════════════════════════════════════════════╝", ConsoleColor.DarkCyan);
+    Console.WriteLine();
+}
         //Bot message 
         public static void BotMessage(string message)
         {
             Console.WriteLine();
-            WriteInline("  🤖 Bot: ", ConsoleColor.Green);
+            WriteInline("[^.^] Bot: ", ConsoleColor.Green);
             TypeWrite(message, ConsoleColor.White);
         }
 
-        //User prompt ──────────────────────────────────────────────
+        //User prompt
         public static void UserPrompt()
         {
             Console.WriteLine();
             WriteInline("  You: ", ConsoleColor.Yellow);
         }
 
-        //header ───────────────────────────────────────────
+        //header
         public static void PrintHeader(string title)
         {
             Console.WriteLine();

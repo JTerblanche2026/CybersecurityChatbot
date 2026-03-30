@@ -5,7 +5,7 @@ namespace CybersecurityChatbot.ChatBot
 {
     public static class ResponseBank
     {
-        // ── Random response lists ────────────────────────────────────
+        // Random response lists 
         private static readonly Random _random = new Random();
 
         private static readonly List<string> _passwordTips = new List<string>
@@ -44,7 +44,7 @@ namespace CybersecurityChatbot.ChatBot
             "Delete accounts and apps you no longer use to reduce your digital footprint."
         };
 
-        // ── Keyword response dictionary ──────────────────────────────
+        // Keyword response dictionary 
         public static readonly Dictionary<string, string> KeywordResponses =
             new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
@@ -60,27 +60,27 @@ namespace CybersecurityChatbot.ChatBot
             { "encryption", "Encryption converts your data into unreadable code so only authorised parties can access it." }
         };
 
-        // ── General conversation responses ───────────────────────────
+        // General conversation responses
         public static readonly Dictionary<string, string> GeneralResponses =
             new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
         {
-            { "how are you",     "I'm running securely and feeling great! Ready to help you stay safe online. 😊" },
+            { "how are you",     "I'm running securely and feeling great! Ready to help you stay safe online. " },
             { "what is your purpose", "I'm your Cybersecurity Awareness Assistant! I help South African citizens understand and avoid cyber threats." },
             { "what can i ask",  "You can ask me about passwords, phishing, scams, privacy, malware, VPNs, 2FA, firewalls, and much more!" },
             { "hello",           "Hello there! Great to see you taking cybersecurity seriously. How can I help you today?" },
             { "hi",              "Hi! I'm your cybersecurity guide. What would you like to learn about today?" },
             { "help",            "I can help you with: passwords, phishing, scams, safe browsing, privacy, malware, VPNs and more. Just ask!" },
-            { "bye",             "Stay safe online! Remember to keep your passwords strong and never click suspicious links. Goodbye! 👋" },
-            { "goodbye",         "Goodbye! Keep practising good cybersecurity habits every day. Stay safe! 👋" }
+            { "bye",             "Stay safe online! Remember to keep your passwords strong and never click suspicious links. Goodbye! " },
+            { "goodbye",         "Goodbye! Keep practising good cybersecurity habits every day. Stay safe! " }
         };
 
-        // ── Random tip getters ───────────────────────────────────────
+        // Random tip getters 
         public static string GetRandomPasswordTip()   => _passwordTips[_random.Next(_passwordTips.Count)];
         public static string GetRandomPhishingTip()   => _phishingTips[_random.Next(_phishingTips.Count)];
         public static string GetRandomBrowsingTip()   => _browsingTips[_random.Next(_browsingTips.Count)];
         public static string GetRandomPrivacyTip()    => _privacyTips[_random.Next(_privacyTips.Count)];
 
-        // ── Default / fallback response ──────────────────────────────
+        // Default / fallback response 
         public static string DefaultResponse =>
             "I didn't quite understand that. Could you rephrase? You can ask me about passwords, phishing, scams, or safe browsing.";
     }

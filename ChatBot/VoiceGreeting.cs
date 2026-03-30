@@ -22,12 +22,12 @@ namespace CybersecurityChatbot.ChatBot
                 }
                 else
                 {
-                    ConsoleUI.WriteColour("  🔊 [Voice greeting file not found — skipping]", ConsoleColor.DarkYellow);
+                    ConsoleUI.WriteColour("  [Voice greeting file not found — skipping]", ConsoleColor.DarkYellow);
                 }
             }
             catch (Exception ex)
             {
-                ConsoleUI.WriteColour($"  ⚠️  Could not play voice greeting: {ex.Message}", ConsoleColor.DarkYellow);
+                ConsoleUI.WriteColour($"  Could not play voice greeting: {ex.Message}", ConsoleColor.DarkYellow);
             }
         }
     }

@@ -6,11 +6,11 @@ namespace CybersecurityChatbot.ChatBot
 {
     public class ChatEngine
     {
-        // ── User memory ──────────────────────────────────────────────
+        // User memory 
         private string _userName = "Friend";
         private string _lastTopic = "";
 
-        // ── Main response handler ────────────────────────────────────
+        // Main response handler 
         public string GetResponse(string input)
 {
     // Handle empty or whitespace input
@@ -19,11 +19,11 @@ namespace CybersecurityChatbot.ChatBot
 
     string lowered = input.ToLower().Trim();
 
-    // ── Check for exit command ───────────────────────────────
+    // Check for exit command 
     if (lowered == "bye" || lowered == "goodbye" || lowered == "exit" || lowered == "quit")
         return ResponseBank.GeneralResponses["bye"];
 
-    // ── Check for random tip requests first ─────────────────
+    // Check for random tip requests first 
     if (lowered.Contains("password tip") || lowered.Contains("password advice"))
     {
         _lastTopic = "password";
@@ -48,7 +48,7 @@ namespace CybersecurityChatbot.ChatBot
         return ResponseBank.GetRandomPrivacyTip();
     }
 
-    // ── Check keyword responses before general ───────────────
+    // Check keyword responses before general 
     foreach (var entry in ResponseBank.KeywordResponses)
     {
         if (lowered.Contains(entry.Key.ToLower()))
@@ -58,25 +58,25 @@ namespace CybersecurityChatbot.ChatBot
         }
     }
 
-    // ── Handle follow-up requests ────────────────────────────
+    // Handle follow-up requests 
     if (lowered.Contains("another") || lowered.Contains("more") ||
         lowered.Contains("tell me more") || lowered.Contains("explain more"))
     {
         return HandleFollowUp();
     }
 
-    // ── Check general conversation last ──────────────────────
+    // Check general conversation last 
     foreach (var entry in ResponseBank.GeneralResponses)
     {
         if (lowered.Contains(entry.Key))
             return entry.Value;
     }
 
-    // ── Default fallback ─────────────────────────────────────
+    // Default fallback 
     return ResponseBank.DefaultResponse;
 }
 
-        // ── Follow-up handler ────────────────────────────────────────
+        // Follow-up handler 
         private string HandleFollowUp()
         {
             switch (_lastTopic)
@@ -94,7 +94,7 @@ namespace CybersecurityChatbot.ChatBot
             }
         }
 
-        // ── Greeting handler ─────────────────────────────────────────
+        // Greeting handler 
         public void StartChat()
         {
             ConsoleUI.PrintDivider();
@@ -114,14 +114,14 @@ namespace CybersecurityChatbot.ChatBot
 
             _userName = name.Trim();
 
-            ConsoleUI.BotMessage($"Great to meet you, {_userName}! 🎉");
+            ConsoleUI.BotMessage($"It's good to meet you, {_userName}! ");
             ConsoleUI.BotMessage($"I'm here to help you stay safe online.");
             ConsoleUI.BotMessage("You can ask me about passwords, phishing, scams, safe browsing, and more!");
             ConsoleUI.BotMessage("Type 'bye' at any time to exit.");
             ConsoleUI.PrintDivider();
         }
 
-        // ── Main chat loop ───────────────────────────────────────────
+        // Main chat loop
         public void RunLoop()
         {
             string input = "";
@@ -146,7 +146,7 @@ namespace CybersecurityChatbot.ChatBot
             }
         }
 
-        // ── Getter for username ──────────────────────────────────────
+        // Getter for username 
         public string GetUserName() => _userName;
     }
 }
