@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bGUp3vus5gA=",
+  "dgSpecHash": "ukLWAQgIm9E=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\CybersecurityChatbot\\CybersecurityChatbot.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
